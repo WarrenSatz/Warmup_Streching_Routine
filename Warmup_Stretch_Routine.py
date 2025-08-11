@@ -1,17 +1,18 @@
-# imports
+#Created with Jupyter cells
+# Cell 1: Imports
 	import time
 	import pyttsx3
 	import os
 	import platform
 
-# Voice package
+# Cell 2: Voice package
 	engine = pyttsx3.init()
 	voices = engine.getProperty('voices')
 
 	for i, voice in enumerate(voices):
 	    print(f"{i}: {voice.name} ({voice.gender}) - {voice.id}")
 
-# macOS-compatible "beep", a prompt used in between each stretch
+# Cell 3: macOS-compatible "beep", a prompt used in between each stretch
 	def beep(is_first=False):
 	    if platform.system() == "Darwin":  # macOS
 	        if not is_first:
@@ -20,7 +21,7 @@
 	        if not is_first:
 	            print('\a')  # Fallback beep
 
-# List of stretches with duration for each stretch
+# Cell 4: List of stretches with duration for each stretch
 	stretches = [
 	    ("Feet shoulder width apart, touch toes", 22),
 	    ("Cherry pickers", 43),
@@ -64,11 +65,11 @@
 	    ("Push ups", 33)
 	]
 
-# Initialize text-to-speech engine
+# Cell 5: Initialize text-to-speech engine
 	engine = pyttsx3.init()
 	engine.setProperty('rate', 150)  # Set speech speed
 
-# Main prompt for warmup/stretch routine output
+# Cell 6: Main prompt for warmup/stretch routine output
 	# Intro before first stretch
 	print("Get ready")
 	os.system('say -v Karen "Get ready."')
@@ -98,7 +99,7 @@
 	    print("Go")
 	    os.system('say -v Karen "Go."')
 
-	    # Wait for stretch duration minus 5 seconds
+	    # Wait for stretch duration minus 3 seconds
 	    if duration > 5:
 	        time.sleep(duration - 3)
 	        # Countdown last 5 seconds
@@ -107,7 +108,6 @@
 	            os.system(f'say -v Karen "{t}"')
 	            time.sleep(.69)
 	    else:
-	        # If duration is very short, just wait the whole time
 	        time.sleep(duration)
 
 	# End of routine
