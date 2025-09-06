@@ -44,7 +44,7 @@
 	    ("Hug leg, right", 33),
 	    ("Hug leg, left", 33),
 	    ("Seated trunk twist, right", 22),
-	    ("Seated trunk, left", 22),
+	    ("Seated trunk twist, left", 22),
 	    ("Laying trunk twist, right", 33),
 	    ("Laying trunk twist, left", 33),
 	    ("Rollypolly", 22),
